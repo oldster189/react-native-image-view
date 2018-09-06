@@ -350,7 +350,7 @@ export default class ImageView extends Component<PropsType, StateType> {
                 const imagesWithoutSize = getImagesWithoutSize(
                     addIndexesToImages(nextProps.images)
                 );
-
+                this.setState({ images: nextProps.images })
                 if (imagesWithoutSize.length) {
                     Promise.all(fetchImageSize(imagesWithoutSize)).then(
                         updatedImages =>
